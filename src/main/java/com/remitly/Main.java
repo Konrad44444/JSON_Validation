@@ -7,12 +7,15 @@ public class Main {
         String validJsonExample = "src\\main\\resources\\example.json";
         String invalidJsonExample = "src\\main\\resources\\invalidFile.txt";
         String notRoleJson = "src\\main\\resources\\notRoleJson.json";
+        String multipleStatements = "src\\main\\resources\\multipleStatements.json";
 
         JSONObject json = FileReader.readJSONFromFile(notRoleJson);
 
-        System.out.println(json);
-
-        System.out.println(JsonVerifier.verifyFormat(json));
+        if (JsonVerifier.verifyFormat(json)) {
+            System.out.println( JsonVerifier.verifyResourceField(json));
+        } else {
+            System.out.println("Not valid JSON file");
+        }
 
 
     }
