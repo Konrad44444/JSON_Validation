@@ -40,4 +40,12 @@ public class JsonVerifierFormatTests {
 
         assertFalse(JsonVerifier.verifyFormat(jsonObject));
     }
+
+    @Test
+    public void givenJsonWithPolicyNameNotMatchingPattern_expectFalse() {
+        String fileName = "noMatchingPolicyNamePattern.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertFalse(JsonVerifier.verifyFormat(jsonObject));
+    }
 }
