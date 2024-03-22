@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JsonVerifier {
+
     public static boolean verifyFormat(JSONObject json) {
         try {
             // check policy name
@@ -37,7 +38,7 @@ public class JsonVerifier {
 
             for (Object s : statements) {
                 JSONObject statement = (JSONObject) s;
-                
+
                 // for each statement check resource
                 // resource can be object or array
                 String resourcesString = statement.optString("Resource");
@@ -46,9 +47,9 @@ public class JsonVerifier {
                 resourcesString = resourcesString.replace("[", "");
                 resourcesString = resourcesString.replace("]", "");
                 String[] resources = resourcesString.split(",");
-                
+
                 for (String resource : resources) {
-                    if(resource.equals("*")) {
+                    if (resource.equals("*")) {
                         return false;
                     }
                 }
@@ -58,7 +59,7 @@ public class JsonVerifier {
             return false;
         }
 
-
         return true;
     }
+    
 }

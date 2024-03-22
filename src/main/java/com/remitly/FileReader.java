@@ -12,6 +12,7 @@ import com.remitly.exceptions.IncorrectPathException;
 import com.remitly.exceptions.InvalidJsonFileException;
 
 public class FileReader {
+
     public static JSONObject readJSONFromFile(String path) {
 
         String jsonTxt = "";
@@ -22,9 +23,9 @@ public class FileReader {
             jsonTxt = IOUtils.toString(is, "UTF-8");
 
         } catch (IOException e) {
-            throw new IncorrectPathException("Check path", e);
+            throw new IncorrectPathException("Cannot find file - check path", e);
         }
-        
+
         try {
             JSONObject json = new JSONObject(jsonTxt);
 
@@ -33,4 +34,5 @@ public class FileReader {
             throw new InvalidJsonFileException("File is not a valid JSON file", e);
         }
     }
+    
 }
