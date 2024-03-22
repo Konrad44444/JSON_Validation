@@ -16,4 +16,12 @@ public class JsonVerifierFormatTests {
 
         assertFalse(JsonVerifier.verifyFormat(jsonObject));
     }
+
+    @Test
+    public void givenJsonWithNoPolicyDocumentField_expectFalse() {
+        String fileName = "noPolicyDocument.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertFalse(JsonVerifier.verifyFormat(jsonObject));
+    }
 }
