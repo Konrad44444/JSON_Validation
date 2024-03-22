@@ -27,4 +27,17 @@ public class FileReaderTests {
         assertNotNull(jsonObject);
     }
 
+    @Test
+    public void givenValidJsonFile_expectCorrectJsonObject() {
+        JSONObject jsonObject = FileReader.readJSONFromFile("src\\test\\resources\\validJsonFile.json");
+
+        assertNotNull(jsonObject);
+    }
+
+    @Test
+    public void givenValidTxtFile_expectCorrectJsonObject() {
+        JSONObject jsonObject = FileReader.readJSONFromFile("src\\test\\resources\\validTxtFile.txt");
+
+        assertNotNull(jsonObject);
+    }
 }
