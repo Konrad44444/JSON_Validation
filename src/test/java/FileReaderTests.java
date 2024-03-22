@@ -9,6 +9,8 @@ import com.remitly.exceptions.IncorrectPathException;
 import com.remitly.exceptions.InvalidJsonFileException;
 
 public class FileReaderTests {
+    private static final String RESOURCES_PATH = "src\\test\\resources\\";
+
     @Test
     public void givenIncorrectPath_expectIncorrectPathException() {
         assertThrows(IncorrectPathException.class, () -> FileReader.readJSONFromFile("\\abc"));
@@ -16,27 +18,35 @@ public class FileReaderTests {
 
     @Test
     public void givenInvalidJsonFile_expectInvalidFileException() {
+        String fileName = "invalidFile.txt";
+
         assertThrows(InvalidJsonFileException.class,
-                () -> FileReader.readJSONFromFile("src\\test\\resources\\invalidFile.txt"));
+                () -> FileReader.readJSONFromFile(RESOURCES_PATH + fileName));
     }
 
     @Test
     public void givenCorrectPath_expectJsonObject() {
-        JSONObject jsonObject = FileReader.readJSONFromFile("src\\test\\resources\\example.json");
+        String fileName = "example.json";
+
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
 
         assertNotNull(jsonObject);
     }
 
     @Test
     public void givenValidJsonFile_expectCorrectJsonObject() {
-        JSONObject jsonObject = FileReader.readJSONFromFile("src\\test\\resources\\validJsonFile.json");
+        String fileName = "validJsonFile.json";
+
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
 
         assertNotNull(jsonObject);
     }
 
     @Test
     public void givenValidTxtFile_expectCorrectJsonObject() {
-        JSONObject jsonObject = FileReader.readJSONFromFile("src\\test\\resources\\validTxtFile.txt");
+        String fileName = "validTxtFile.txt";
+
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
 
         assertNotNull(jsonObject);
     }
