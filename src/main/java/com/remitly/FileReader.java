@@ -9,6 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.remitly.exceptions.IncorrectPathException;
+import com.remitly.exceptions.InvalidJsonFileException;
 
 public class FileReader {
     public static JSONObject readJSONFromFile(String path) {
@@ -29,8 +30,7 @@ public class FileReader {
 
             return json;
         } catch (JSONException e) {
-            // TODO: handle custom exceptions
-            throw new RuntimeException("Bad JSON exception");
+            throw new InvalidJsonFileException("File is not a valid JSON file", e);
         }
     }
 }
