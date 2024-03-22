@@ -5,14 +5,14 @@ import org.json.JSONObject;
 public class Main {
     public static void main(String[] args) {
         String validJsonExample = "src\\main\\resources\\example.json";
-        String invalidJsonExample = "src\\main\\resources\\invalidFile.txt";
+        String invalidJsonExample = "src\\main\\resources\\invalidFile.tx";
         String notRoleJson = "src\\main\\resources\\notRoleJson.json";
         String multipleStatements = "src\\main\\resources\\multipleStatements.json";
 
-        JSONObject json = FileReader.readJSONFromFile(notRoleJson);
+        JSONObject json = FileReader.readJSONFromFile(invalidJsonExample);
 
         if (JsonVerifier.verifyFormat(json)) {
-            System.out.println( JsonVerifier.verifyResourceField(json));
+            System.out.println(JsonVerifier.verifyResourceField(json));
         } else {
             System.out.println("Not valid JSON file");
         }
