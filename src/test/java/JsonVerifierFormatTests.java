@@ -32,4 +32,12 @@ public class JsonVerifierFormatTests {
 
         assertFalse(JsonVerifier.verifyFormat(jsonObject));
     }
+
+    @Test
+    public void givenJsonWithTooLongPolicyNameFieldValue_expectFalse() {
+        String fileName = "tooLongPolicyName.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertFalse(JsonVerifier.verifyFormat(jsonObject));
+    }
 }

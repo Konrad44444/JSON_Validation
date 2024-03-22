@@ -1,0 +1,15 @@
+{
+    "PolicyName": "129characterscr9ns3g1arbqx7mlwpf6sjec1lgd087r4ifvy8jwf5liyxc9m5g7pct7xesulg986uqbitnlshmb8vveczplmcys0m3h888w27p7thccyf1m9u37fp0z", 
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": ["iam:ListRoles", "iam:ListUsers"],
+          "Resource": "*"
+        }
+      ]
+    }
+  }
+  
