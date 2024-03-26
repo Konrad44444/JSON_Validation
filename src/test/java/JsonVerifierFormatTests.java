@@ -81,4 +81,12 @@ public class JsonVerifierFormatTests {
 
         assertTrue(JsonVerifier.verifyFormat(jsonObject));
     }
+
+    @Test
+    public void givenJsonWithMultipleStatementsInPolicyDocument_expectTrue() {
+        String fileName = "multipleStatementsInPolicyDocument.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertTrue(JsonVerifier.verifyFormat(jsonObject));
+    }
 }
