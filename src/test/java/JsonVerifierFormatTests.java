@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
@@ -47,5 +48,13 @@ public class JsonVerifierFormatTests {
         JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
 
         assertFalse(JsonVerifier.verifyFormat(jsonObject));
+    }
+
+    @Test
+    public void givenJsonWithMatchingPolicyNamePattern_expectTrue() {
+        String fileName = "matchingPolicyNamePattern.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertTrue(JsonVerifier.verifyFormat(jsonObject));
     }
 }
