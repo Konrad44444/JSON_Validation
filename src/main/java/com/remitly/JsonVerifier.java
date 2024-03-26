@@ -29,7 +29,7 @@ public class JsonVerifier {
 
         return true;
     }
-    
+
     public static boolean verifyResourceField(JSONObject json) {
         try {
             JSONObject policyDocument = json.getJSONObject("PolicyDocument");
@@ -42,6 +42,11 @@ public class JsonVerifier {
                 // for each statement check resource
                 // resource can be object or array
                 String resourcesString = statement.optString("Resource");
+
+                // if there is no resource field
+                if (resourcesString.equals("")) {
+                    return false;
+                }
 
                 // string preparations
                 resourcesString = resourcesString.replace("[", "");
@@ -61,5 +66,5 @@ public class JsonVerifier {
 
         return true;
     }
-    
+
 }
