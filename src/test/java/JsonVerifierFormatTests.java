@@ -27,6 +27,14 @@ public class JsonVerifierFormatTests {
     }
 
     @Test
+    public void givenJsonWithBothPolicyNameAndPolicyDocumentFields_expectTrue() {
+        String fileName = "example.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertTrue(JsonVerifier.verifyFormat(jsonObject));
+    }
+
+    @Test
     public void givenJsonWithPolicyNameButEmptyField_expectFalse() {
         String fileName = "emptyPolicyName.json";
         JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
