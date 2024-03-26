@@ -51,6 +51,14 @@ public class JsonVerifierFormatTests {
     }
 
     @Test
+    public void given128lettersPolicyName_expectTrue() {
+        String fileName = "128LettersPolicyName.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertTrue(JsonVerifier.verifyFormat(jsonObject));
+    }
+
+    @Test
     public void givenJsonWithPolicyNameNotMatchingPattern_expectFalse() {
         String fileName = "noMatchingPolicyNamePattern.json";
         JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);

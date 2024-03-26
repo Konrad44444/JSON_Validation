@@ -1,0 +1,14 @@
+{
+  "PolicyName": "EbtH,fq@0SXZ=8zFNGh,VSg4aCSj-UVy1Eug2AVcJNWvIbKYDpCD.kf.oVpauCALqHrjO23DZUXXevtajXCyMfZeDohjNyIEnlS4vHd2PsUeaACJBzNMkvpMU8-fRQCy",
+  "PolicyDocument": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "IamListAccess",
+        "Effect": "Allow",
+        "Action": ["iam:ListRoles", "iam:ListUsers"],
+        "Resource": "*"
+      }
+    ]
+  }
+}
