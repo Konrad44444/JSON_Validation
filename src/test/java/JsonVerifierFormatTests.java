@@ -43,6 +43,14 @@ public class JsonVerifierFormatTests {
     }
 
     @Test
+    public void givenJsonWithSingleLetterPolicyName_expectTrue() {
+        String fileName = "singleLetterPolicyName.json";
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertTrue(JsonVerifier.verifyFormat(jsonObject));
+    }
+
+    @Test
     public void givenJsonWithPolicyNameNotMatchingPattern_expectFalse() {
         String fileName = "noMatchingPolicyNamePattern.json";
         JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
