@@ -27,4 +27,13 @@ public class JsonResourceFieldVerifierTests {
 
         assertTrue(JsonVerifier.verifyResourceField(jsonObject));
     }
+
+    @Test
+    public void givenJsonWithMultipleStatementsAndOneSingleAsteristInResourceField_expectFalse() {
+        String fileName = "multipleStatementsAndOneSingleAsteriskInResourceField.json";
+
+        JSONObject jsonObject = FileReader.readJSONFromFile(RESOURCES_PATH + fileName);
+
+        assertFalse(JsonVerifier.verifyResourceField(jsonObject));
+    }
 }
