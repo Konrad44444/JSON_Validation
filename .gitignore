@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!json_validation.jar
 *.war
 *.nar
 *.ear

@@ -24,7 +24,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(
-                "Type in path to the JSON file: (ex. C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\example.json)");
+                "Type in path to the JSON file: (ex. src\\test\\resources\\example.json)");
         String path = scanner.nextLine();
 
         scanner.close();
