@@ -20,7 +20,7 @@ public class MainTests {
 
     @Test
     public void givenCorrectPathToValidJson_expectSuccessString() throws IOException {
-        String path = "C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\validResourceField.json";
+        String path = "src\\test\\resources\\validResourceField.json";
 
         ByteArrayInputStream testIn = new ByteArrayInputStream(path.getBytes());
 
@@ -41,7 +41,7 @@ public class MainTests {
 
     @Test
     public void givenCorrectPathToValidJson_expectFailString() throws IOException {
-        String path = "C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\jsonWithSingleAsteriskInResourceField.json";
+        String path = "src\\test\\resources\\jsonWithSingleAsteriskInResourceField.json";
 
         ByteArrayInputStream testIn = new ByteArrayInputStream(path.getBytes());
 
@@ -62,7 +62,7 @@ public class MainTests {
 
     @Test
     public void givenIncorrectPath_expectIcorrectPathExceptionMessage() {
-        String path = "C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\fileDoesNotExists.json";
+        String path = "src\\test\\resources\\fileDoesNotExists.json";
 
         ByteArrayInputStream testIn = new ByteArrayInputStream(path.getBytes());
 
@@ -83,7 +83,7 @@ public class MainTests {
 
     @Test
     public void givenInvalidJsonFilePath_expectInvalidJsonFileExceptionMessage() {
-        String path = "C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\invalidFile.txt";
+        String path = "src\\test\\resources\\invalidFile.txt";
 
         ByteArrayInputStream testIn = new ByteArrayInputStream(path.getBytes());
 
@@ -104,7 +104,7 @@ public class MainTests {
 
     @Test
     public void givenInvalidJsonFormat_expectInvalidJsonFormatString() {
-        String path = "C:\\Users\\konra\\Desktop\\json_validation\\src\\test\\resources\\emptyPolicyName.json";
+        String path = "src\\test\\resources\\emptyPolicyName.json";
 
         ByteArrayInputStream testIn = new ByteArrayInputStream(path.getBytes());
 
